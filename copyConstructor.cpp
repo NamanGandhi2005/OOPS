@@ -7,7 +7,9 @@ class Hero{
     public:
     int level;
     //parametrised constructor
-
+    Hero(){
+        cout<<"default constructor"<<endl;
+    }
     Hero(int health){
         cout<<this<<endl;
         this->health=health;//this is for current context
@@ -17,6 +19,12 @@ class Hero{
         this->level=level;
     }
 
+    //COPY CONSTRUCTOR 
+
+    Hero(Hero &temp){
+        this->health=temp.health;
+        this->level=temp.level;
+    }
     void print(){
         cout<<health<<endl;
         cout<<level<<endl;
@@ -39,11 +47,14 @@ class Hero{
 int main(){
     
     
-    // Hero ramesh(100);//parametrised constructor
-    // cout<<ramesh.getHealth()<<endl;
-    Hero suresh(200,300);
-    suresh.print();
-    cout<<suresh.getHealth()<<endl;
+    Hero suresh;
+    suresh.setHealth(100);
+    suresh.setLevel(5);
+
+    //copy constructor which is by default in class 
+    Hero ritesh(suresh);//ritesh ko copy krdo suresh ka 
+
+    cout<<ritesh.getHealth()<<endl;
 
 
 
