@@ -24,7 +24,7 @@ class Hero{
 int main(){
     Hero h1;
     // h1.health=78;cant update like this
-
+    cout<<h1.health;
     h1.setHealth(70);
     h1.setLevel(100);
 
