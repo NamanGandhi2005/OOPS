@@ -1,82 +1,101 @@
 #include<iostream>
- using namespace std;
-
+using namespace std;
 
 class Animal{
     private:
     int health;
-
+    
     public:
     string name;
-    static int id;
+    int age;
+    static int tora;
 
-    public:
 
+    Animal(Animal&temp){
+        this->health=temp.health;
+        this->name=temp.name;
+        this->age=temp.age;
+        cout<<"default co[py constrictpr"<<endl;
+    }
 
     Animal(){
-        cout<<"default dconstruct36or 1"<<endl;
+        cout<<"default"<<endl;
     }
-
-    Animal(int health ,string name){
+    Animal(int health,string name,int age){
         this->health=health;
         this->name=name;
-        cout<<"parametrised "<<endl;
+        this->age=age;
     }
 
-    int getHealth(){
-        return this->health;
+    void print(){
+        cout<<this->health<<endl;
+        cout<<this->name<<endl;
     }
 
     void setHealth(int health){
         this->health=health;
-        
     }
-
-    void print(){
-        cout<<this->name<<endl;
+    int getHealth(){
+        return this->health;
     }
 
     ~Animal(){
-        cout<<"destuot callded"<<endl;
+        cout<<"defaul desturctor"<<endl;
     }
 
 
 
-
-    
 };
 
-Animal::id=5;
+
+class Person{
+    public:
+    string name;
+    int age;
+
+    static int tora;
+
+
+};
+
+int Animal::tora=500;
+int Person::tora=1000;
+
 
 int main(){
-    
+    // Animal a1;//default constructor
+    Animal a2(100,"tanya",10);//parametrised contructor
+    //copy contructor
+    Animal a3(a2);
 
-    Animal a1(100,"namn");
-    Animal a2(200,"tanya");
-    cout<<a1.getHealth()<<endl;
-    cout<<a2.getHealth()<<endl;
+    a3.print();
 
-    a2=a1;
+    a2.print();
 
-    cout<<a1.getHealth()<<endl;
-    cout<<a2.getHealth()<<endl;
-
-
-    // Animal a1(100,"namn");
-    // Animal a2(a1);
-    // cout<<a2.getHealth()<<endl;
-
-    // a1.setHealth(200);
-
-    // cout<<a1.getHealth()<<endl;
-    // cout<<a2.getHealth()<<endl;
-
-    // Animal a1;
-    // a1.setHealth(100);
     // a1.name="naman";
-    // cout<<a1.getHealth()<<endl;
-
     // a1.print();
-    return 0;
+
+    //default copy contrcutor creates shallow copty when used raw pointer lile 
+    // char*name;
+
+    //but it will create deep copy if used int age,string name
+
+    //destructor
+
+    // to delete object we use destrcutor
+
+    Animal *ok=new Animal(50,"okbro",100);
+
+    (*ok).print();
+    (*ok).setHealth(121);
+    cout<<(*ok).getHealth()<<endl;
+
+    ok->print();
+
+    cout<<" "<<endl;
+
+    cout<<a2.tora<<endl;//static keyword is used when we want to keep somthin static in all the classes 
+
+    cout<<Person::tora<<endl;
 
 }

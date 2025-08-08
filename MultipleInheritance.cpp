@@ -7,7 +7,7 @@ class Animal{
     int weight;
 
     public:
-    void speak(){
+    void bark(){
         cout<<"speaking"<<endl;
     }
 };
@@ -30,7 +30,11 @@ int main(){
     
 
     Saintbernard S1;
-    S1.speak();
-    S1.bark();
+    // S1.bark();//this is ambigous
+
+    S1.Dog::bark();
+    S1.Animal::bark();
+
+    return 0;
 
 }
