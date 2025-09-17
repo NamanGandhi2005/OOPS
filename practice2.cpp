@@ -14,7 +14,7 @@ class Animal{
         age=new int;
 
         (*age)=a;
-        this->name=temp.name;
+        this->name=name;
         cout<<"parametrised constructor called"<<endl;
         
     }
@@ -23,7 +23,7 @@ class Animal{
         age=new int;
 
         (*age)=*(temp.age);
-        this->name=name;
+        this->name=temp.name;
         cout<<"deep constrictor called"<<endl;
 
     }
@@ -39,6 +39,8 @@ class Animal{
     }
 };
 
+
+
 int main(){ 
     Animal a1;
     *(a1.age)=20;
@@ -49,10 +51,13 @@ int main(){
     *(a2.age)=50;
     a1.print();
     a2.print();
+
+    
     //it creates deep copy when data members are static
 
     //it creates shallow copt when the data members are dynamic
 
+    
 
     
     return 0;
