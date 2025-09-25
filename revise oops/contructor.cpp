@@ -115,8 +115,8 @@ int main(){
     
 
     //static values are only accesded by static functions 
-    
 
+    d
 
 
 

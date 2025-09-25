@@ -4,13 +4,15 @@ using namespace std;
 
 
 class person{
-    private:
+    protected:
     int age;
 
     public:
     string name;
     int health;
+    person(){
 
+    }
     person(int age,string name,int health){
         this->age=age;
         this->name=name;
@@ -25,19 +27,37 @@ class person{
 
     }
     void speak(){
-        cout<<
+        cout<<this->name<<" is speaking"<<endl;
     }
+};
+class Banda:public person{
+    public:
+    Banda(){
+        
+        cout<<"default constructor"<<endl;
+    }
+    void bark(){
+        cout<<age<<endl;
+    }
+
 };
 
 
 int main(){
 
-    person p1(20,"naman",100);
+    // person p1(20,"naman",100);
 
-    p1.print();
+    // p1.print();
 
-
+    // p1.speak();
     
+    // Banda b1;
+    // b1.name="tanya";
+    // b1.age=010;
+    // b1.bark();
+
+
+
     
 
     return 0;
