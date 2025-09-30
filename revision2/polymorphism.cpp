@@ -25,12 +25,11 @@ class animal:public person{
 };
 
 int main(){
-    person *p1;
+    person*p1;
     
     p1=new animal;
+
     (*p1).speak();
-    
-    
 
     return 0;
 }

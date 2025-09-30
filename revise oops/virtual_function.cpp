@@ -3,7 +3,7 @@ using namespace std;
 
 class parent{
     public:
-    virtual void speak(){
+    void speak(){
         cout<<"parent is speaking"<<endl;
     }
 
