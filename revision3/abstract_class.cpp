@@ -8,14 +8,14 @@ class animal{
 
 class person:public animal{
     public:
-    void draw() override{
+    void draw(){
         cout<<"person drawing"<<endl;
     }
 };
 
 class dog:public animal{
     public:
-    void draw() override{
+    void draw(){
         cout<<"dog drwaing"<<endl;
     }
 };

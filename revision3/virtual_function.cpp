@@ -12,7 +12,7 @@ class person:public animal{
     public:
     void speak(){
         cout<<"person speaking"<<endl;
-    }
+    } 
 };
 
 
